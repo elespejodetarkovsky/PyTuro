@@ -1,0 +1,33 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Portafolio{% endblock %}
+
+{% load static %}
+
+{% block background %}{% static 'core/img/portfolio-bg.jpg' %}{% endblock %}
+
+{% block headers %}
+    <h1>Cursos</h1>
+    <span class="subheading">Cursos</span>
+{% endblock %}
+
+{% block content %}
+    {% for curso in listcursos %}
+        <!-- Cursos -->
+        <div class="row project">   
+            <div class="col-lg-7 col-md-8">
+                <h2 class="section-heading title">{{curso.codi_curs}}</h2>   
+                <p>{{curso.nom}}</p>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

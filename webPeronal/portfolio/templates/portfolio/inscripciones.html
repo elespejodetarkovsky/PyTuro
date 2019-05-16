@@ -1,0 +1,41 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Portafolio{% endblock %}
+
+{% load static %}
+
+{% block background %}{% static 'core/img/portfolio-bg.jpg' %}{% endblock %}
+
+{% block headers %}
+    <h1>Cursos</h1>
+    <span class="subheading">Cursos</span>
+{% endblock %}
+
+{% block content %}
+ 	{% for codigoCurso in listCodi_cursos %}
+		<div>
+			<p>Codigo de CURSO: {{codigoCurso.id}}</p>
+	    {% for inscripcion in listInscripciones %}
+	        <!-- Cursos -->
+	        <div class="row project">   
+	            <div class="col-lg-7 col-md-8">
+<!-- 	            <p>codigo de inscripcion {{inscripcion.id}}</p> -->
+	             {% if codigoCurso.id == inscripcion.codi_curs_id %}
+	                <p>{{inscripcion.nom}}</p>
+	             {% endif %}
+	            </div>
+	        </div>
+	     {% endfor %}
+	    </div>
+	  {% endfor %}
+{% endblock %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>
